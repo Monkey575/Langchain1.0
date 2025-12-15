@@ -22,7 +22,7 @@ agent = create_agent(
     model=model,
     tools=[get_weather],
 )
-for token, metadata in agent.stream(  
+for token, metadata in agent.stream(  #token是一个文本片段，这就是为什么用户可以看到ai的消息一个字一个字的输出， metadata是元数据，表明背景信息
     {"messages": [{"role": "user", "content": "What is the weather in SF?"}]},
     stream_mode="messages",
 ):

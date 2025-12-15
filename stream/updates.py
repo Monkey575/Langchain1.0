@@ -25,7 +25,7 @@ agent = create_agent(
     model=model,
     tools=[get_weather],
 )
-for chunk in agent.stream(  
+for chunk in agent.stream(      #chunk是一个字典，key是step，value是对应step的内容，随时收到代理的最新状态
     {"messages": [{"role": "user", "content": "What is the weather in SF?"}]},
     stream_mode="updates",  #设置stream模式为updates
 ):
